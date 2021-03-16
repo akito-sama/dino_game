@@ -22,6 +22,7 @@ class Obstacle(pygame.sprite.Sprite):
         if pygame.sprite.collide_rect(self, self.game.player):
             self.game.stat = 'game over'
             self.game.player.image = self.game.player_stats[2]
+            self.game.player.rect = pygame.Rect(50, 185, 40, 55)
 
     def draw(self, screen):
         screen.blit(self.image, (self.rect.x - self.spacing[0], self.rect.y - self.spacing[1]))
